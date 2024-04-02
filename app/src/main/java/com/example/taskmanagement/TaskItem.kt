@@ -2,16 +2,19 @@ package com.example.taskmanagement
 
 import android.content.Context
 import androidx.core.content.ContextCompat
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.time.LocalDate
 import java.time.LocalTime
 import java.util.*
-
+@Entity(tableName = "task_item_table")
 class TaskItem (
-    var name:String,
-    var desc:String,
-    var dueTime:LocalTime?,
-    var completedDate:LocalDate?,
-    var id:UUID = UUID.randomUUID()
+    @ColumnInfo(name="name")var name:String,
+    @ColumnInfo(name="desc")var desc:String,
+    @ColumnInfo(name="dueTimeString")var dueTimeString:String?,
+    @ColumnInfo(name="completedDateString")var completedDate:LocalDate?,
+    @PrimaryKey(autoGenerate=true)var id: Int=0
 )
 {
 fun isCompleted( )=completedDate !=null
