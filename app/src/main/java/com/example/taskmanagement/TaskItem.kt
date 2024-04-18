@@ -16,6 +16,7 @@ class TaskItem (
     @ColumnInfo(name="name") var name: String,
     @ColumnInfo(name="desc") var desc: String,
     @ColumnInfo(name="dueTimeString") var dueTimeString: String?,
+//    @ColumnInfo(name = "due_date_time") var dueDateTime: LocalDateTime?,
     @ColumnInfo(name="completedDateString") var completedDateString: String?,
     @PrimaryKey(autoGenerate=true) var id: Int = 0
 ) {
